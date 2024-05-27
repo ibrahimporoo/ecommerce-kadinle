@@ -9,7 +9,7 @@ import {
 } from "react-share";
 
 import { Loading } from "../global/Loading";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTranslations } from "next-intl";
 import { ListInvited, inviteFriend } from "@/app/api/supabase/user";
 

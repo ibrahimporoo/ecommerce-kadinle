@@ -4,7 +4,7 @@ import { getFormatPrice } from "@/app/api/lib/functions";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
 import HeartIcon from "../Icons/HeartIcon";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { unlikeProduct, likeProduct } from "./../../../api/supabase/user";
 import { useRouter } from "next/navigation";
 import FlashIcon from "../Icons/FlashIcon";

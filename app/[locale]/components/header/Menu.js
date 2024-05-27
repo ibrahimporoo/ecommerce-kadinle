@@ -1,5 +1,5 @@
 import { getCountries, getLanguages } from "@/app/api/supabase/shared";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
 

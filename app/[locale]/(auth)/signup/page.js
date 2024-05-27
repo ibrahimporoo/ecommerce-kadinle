@@ -2,7 +2,7 @@
 import { generateMail } from "@/app/api/emails/sender";
 import { signup } from "@/app/api/supabase/auth";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";

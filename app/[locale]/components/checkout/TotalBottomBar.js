@@ -3,7 +3,7 @@ import { getFormatPrice } from "@/app/api/lib/functions";
 import { SHIPPING_TYPE } from "@/app/api/static/constants";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import { toast } from "react-hot-toast";
 

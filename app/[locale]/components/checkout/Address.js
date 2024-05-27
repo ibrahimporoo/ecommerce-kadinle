@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { CheckoutBar } from "./CheckoutBar";
 import AddNewAddress from "../my-profile/AddNewAddress";
 import { ShippingType } from "./ShippingType";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Address = ({
   shipping_adress,

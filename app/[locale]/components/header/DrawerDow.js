@@ -1,7 +1,7 @@
 "use client";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState, useTransition } from "react";

@@ -3,7 +3,7 @@ import {
   replaceTextWithLink,
 } from "@/app/api/lib/functions";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
 

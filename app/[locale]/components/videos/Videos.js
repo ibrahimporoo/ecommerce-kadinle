@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useMemo, useState, useRef } from "react";
 import { Fragment } from "react";
 import ReactPaginate from "react-paginate";
 import VideosCard from "./VideosCard";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ViewAs } from "../categories/ViewAs";
 import SingleCategorySkeleton from "../skeletons/SingleCategorySkeleton";
 import ScrollUpComponent from "../global/ScrollUpComponent";

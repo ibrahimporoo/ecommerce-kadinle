@@ -23,7 +23,7 @@ import {
 import AddComment from "./AddComment";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { getFormatPrice } from "@/app/api/lib/functions";

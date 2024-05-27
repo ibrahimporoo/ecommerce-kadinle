@@ -1,6 +1,6 @@
 "use client";
 import Marquee from "react-fast-marquee";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import CloseIcon from "../Icons/CloseIcon";
 const NewsBar = ({ setOpenNews, news, locale }) => {
   const isArabic = locale === "ar";

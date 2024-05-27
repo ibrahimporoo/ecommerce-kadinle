@@ -52,20 +52,22 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        <GlobalOptionsContextProvider>
-          <div className="full-screen">
-          <LiveChatFull />
-          </div>
+      <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <GlobalOptionsContextProvider>
+            <div className="full-screen">
+            <LiveChatFull />
+            </div>
 
-          <div className="mob-screen">
-          <LiveChat />
-          </div>
-          <AuthPopup locale={locale} />
-          <Toaster position="top-center" reverseOrder={false} />
-          <body>{children}</body>
-        </GlobalOptionsContextProvider>
-      </NextIntlClientProvider>
+            <div className="mob-screen">
+            <LiveChat />
+            </div>
+            <AuthPopup locale={locale} />
+            <Toaster position="top-center" reverseOrder={false} />
+            {children}
+          </GlobalOptionsContextProvider>
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 import { IinquireAvailabilityScreen } from "@/app/[locale]/components/chat/IinquireAvailabilityScreen";
 import { ShippingOrderScreen } from "@/app/[locale]/components/chat/ShippingOrderScreen";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function getCountryName() {
   const localStorageCurrency =

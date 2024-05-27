@@ -2,7 +2,7 @@
 import { onShareProductPoints } from "@/app/api/supabase/points";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useContext, useState } from "react";
 import {
   FacebookMessengerShareButton,

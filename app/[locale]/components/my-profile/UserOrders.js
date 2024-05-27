@@ -16,7 +16,7 @@ import OneOrder from "./OneOrder";
 import { Loading } from "../global/Loading";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import AlertMessage from "../global/AlertMessage";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const UserOrders = ({ setActiveTab, user, locale, orderStatus, orders }) => {
   const t = useTranslations();

@@ -11,7 +11,7 @@ import { supabase } from "@/app/api/supabase/supabase.config";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import Cookies from "js-cookie";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useContext, useEffect, useState } from "react";
 
 const Apple = "https://kadinle.com/media/images/Apple.svg";

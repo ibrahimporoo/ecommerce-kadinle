@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import FlashIcon from "../Icons/FlashIcon";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import HeartIcon from "../Icons/HeartIcon";
 import { likeProduct, unlikeProduct } from "@/app/api/supabase/user";
 import { StarIcon } from "../Icons/StarIcon";

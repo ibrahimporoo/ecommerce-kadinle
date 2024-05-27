@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import OneReview from "./OneReview";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { StarIcon } from "../Icons/StarIcon";
 
 const ProductReviewsFull = ({ variants, product_id, reviews, setRefresh }) => {

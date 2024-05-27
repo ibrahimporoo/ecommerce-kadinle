@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, Fragment, useEffect, useMemo, useState } from "react";
 import ProductCard from "../products/ProductCard";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ViewAs } from "./ViewAs";
 import { useTranslations } from "next-intl";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";

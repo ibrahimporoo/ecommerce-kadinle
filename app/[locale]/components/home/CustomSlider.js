@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useRouter } from "next/navigation";
 import HomeSliderSkeleton from "../skeletons/HomeSliderSkeleton";
 

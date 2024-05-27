@@ -9,7 +9,7 @@ import "swiper/swiper.min.css";
 import { useTranslations } from "next-intl";
 import ScrollUpComponent from "../global/ScrollUpComponent";
 import { StaticPageTitle } from "../global/StaticPageTitle";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 SwiperCore.use([Pagination, Navigation]);
 const PinkLeft = "https://kadinle.com/media/images/PinkLeft.svg";

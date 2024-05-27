@@ -1,7 +1,7 @@
 import { ChatIcon } from "../Icons/ChatIcon";
 import { NotificationBar } from "./NotificationBar";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 export const UpperBar = async ({ locale }) => {

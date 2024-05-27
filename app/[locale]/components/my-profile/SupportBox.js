@@ -3,7 +3,7 @@ import { generateMail } from "@/app/api/emails/sender";
 import { submitTicket } from "@/app/api/supabase/user";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useState } from "react";
 import { InputField } from "../forms/InputField";
 

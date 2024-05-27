@@ -12,7 +12,7 @@ import ProductReviewsFull from "./ProductReviewsFull";
 import ProductDetails from "./ProductDetails";
 import SizeChart from "./SizeChart";
 import SimilarProductsFull from "./SimilarProductsFull";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { AdsTapeBar } from "./AdsTapeBar";
 import { SuggestionsProductsFull } from "./SuggestionsProductsFull";
 import { MySizeInfo } from "../global/MySizeInfo";

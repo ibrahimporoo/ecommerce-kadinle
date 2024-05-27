@@ -23,7 +23,7 @@ import ScrollUpComponent from "../global/ScrollUpComponent";
 import BottomNav from "../footer/BottomNav";
 import { Loading } from "../global/Loading";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Cart from "./Cart";
 import Address from "./Address";
 import Checkout from "./Checkout";

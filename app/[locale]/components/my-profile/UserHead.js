@@ -2,7 +2,7 @@
 
 import { updateUserAvatar } from "@/app/api/supabase/user";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useState } from "react";
 
 const Camera = "https://kadinle.com/media/images/camera.svg";

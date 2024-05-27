@@ -1,6 +1,6 @@
 "use client";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 

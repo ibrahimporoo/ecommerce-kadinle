@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ScrollUpComponent from "../../components/global/ScrollUpComponent";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Cookies from "js-cookie";
 
 const Page = ({ params: { locale } }) => {

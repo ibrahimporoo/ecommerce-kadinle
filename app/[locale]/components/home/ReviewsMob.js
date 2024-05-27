@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import SwiperCore, { Pagination, Navigation } from "swiper";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTranslations } from "next-intl";
 import { SectionTitle } from "../global/SectionTitle";
 

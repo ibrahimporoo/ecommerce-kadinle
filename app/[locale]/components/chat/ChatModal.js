@@ -5,7 +5,7 @@ import { chat } from "@/app/api/static/chat-data";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import CloseTwoIcon from "../Icons/CloseTwoIcon";
 import ChevronIcon from "./ChevronIcon";
 

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { StarIcon } from "../Icons/StarIcon";
 import { didUserBuy, addComment } from "./../../../api/supabase/products";

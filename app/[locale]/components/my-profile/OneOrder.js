@@ -4,7 +4,7 @@ import React from "react";
 import { OrderStatusBar } from "./OrderStatusBar";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import { addToUser_cart } from "@/app/api/supabase/user";
 const pic1 = "https://kadinle.com/media/images/pic1.png";

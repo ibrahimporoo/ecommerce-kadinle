@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTranslations } from "next-intl";
 import { POINTS_STATUS } from "@/app/api/static/constants";
 import { getUserData, getUserPoints } from "@/app/api/supabase/user";

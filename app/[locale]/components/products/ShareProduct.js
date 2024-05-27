@@ -9,7 +9,7 @@ import {
   WhatsappShareButton,
 } from "react-share";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTranslations } from "next-intl";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { onShareProductPoints } from "@/app/api/supabase/points";

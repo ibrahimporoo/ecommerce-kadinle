@@ -6,7 +6,7 @@ import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import { applyCoupon } from "@/app/api/supabase/products";
 import { CheckoutBar } from "./CheckoutBar";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { CartSendGift } from "./CartSendGift";
 import {
   getStockCount,

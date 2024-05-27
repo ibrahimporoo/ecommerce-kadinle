@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { getOrderBill } from "@/app/api/supabase/orders";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import { BillForm } from "./BillForm";

@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import ScrollUpComponent from "../global/ScrollUpComponent";
 import { StaticPageTitle } from "../global/StaticPageTitle";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import ChevronIcon from "../chat/ChevronIcon";
 

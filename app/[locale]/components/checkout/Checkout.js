@@ -6,7 +6,7 @@ import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
 import React, { useContext, useEffect, useState } from "react";
 import { CheckoutBar } from "./CheckoutBar";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { getFormatPrice } from "@/app/api/lib/functions";
 
 const add = "https://kadinle.com/media/images/add.png";

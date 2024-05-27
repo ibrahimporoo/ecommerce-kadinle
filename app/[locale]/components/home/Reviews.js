@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 
 import { useTranslations } from "next-intl";
 import { SectionTitle } from "../global/SectionTitle";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import SliderNavigationBtn from "../global/SliderNavigationBtn";
 import { TestimonialCard } from "../cards/TestimonialCard";

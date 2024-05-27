@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { submitSuggestion } from "@/app/api/supabase/user";
 import { generateMail } from "@/app/api/emails/sender";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export const UserSuggestion = ({ setActiveTab, user, locale }) => {
   const t = useTranslations();

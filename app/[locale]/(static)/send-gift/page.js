@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import Layout from "../../components/layout/Layout";
 import ScrollUpComponent from "../../components/global/ScrollUpComponent";
 import { StaticPageTitle } from "../../components/global/StaticPageTitle";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 export const metadata = { title: "KADINLE | Send gift" };

@@ -13,7 +13,7 @@ import {
 import CloseIcon from "../Icons/CloseIcon";
 import { PlusIcon } from "../Icons/PlusIcon";
 import { ReturnOrderForm } from "./ReturnOrderForm";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Loading } from "../global/Loading";
 
 const UserReturnOrders = ({ setActiveTab }) => {

@@ -25,7 +25,7 @@ import {
 import { getWarehouseInformation } from "@/app/api/supabase/products";
 import { getFormatPrice } from "@/app/api/lib/functions";
 import ShareProductFull from "./ShareProductFull";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import ProductSliderFull from "./ProductSliderFull";
 import { ProductStarReviews } from "./ProductStarReviews";
 import { AdsTapeBar } from "./AdsTapeBar";

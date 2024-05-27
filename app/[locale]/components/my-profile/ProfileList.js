@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import CloseIcon from "../Icons/CloseIcon";
 import CalenderIcon from "../Icons/CalenderIcon";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTranslations } from "next-intl";
 import { EyeIcon } from "../Icons/EyeIcon";
 import AddressesIcon from "../Icons/AddressesIcon";

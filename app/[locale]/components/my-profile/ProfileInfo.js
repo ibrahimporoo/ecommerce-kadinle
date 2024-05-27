@@ -13,7 +13,7 @@ import { getMonthCount } from "@/app/api/lib/functions";
 import { generateMail } from "@/app/api/emails/sender";
 import { useTranslations } from "next-intl";
 import { CustomModal } from "../modal/CustomModal";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const ProfileInfo = ({ setActive, user, locale }) => {
   const t = useTranslations();

@@ -5,7 +5,7 @@ import { FilterRow } from "./FilterRow";
 import Range from "./Range";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const apply = "https://kadinle.com/media/images/apply.svg";
 const choose = "https://kadinle.com/media/images/choose.svg";

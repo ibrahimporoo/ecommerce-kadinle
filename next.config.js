@@ -12,6 +12,10 @@ const nextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
   // output: "export",
+  i18n: {
+    locales: ["en", "fr", "es"],
+    defaultLocale: 'en'
+  }
 };
 
 const withNextIntl = require("next-intl/plugin")(

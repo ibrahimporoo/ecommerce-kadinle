@@ -5,7 +5,7 @@ import ChatModal from "../chat/ChatModal";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const BottomNav = () => {
   const t = useTranslations();

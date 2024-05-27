@@ -4,7 +4,7 @@ import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useEffect, useRef, useState } from "react";
 import ArrowBackIcon from "../Icons/ArrowBackIcon";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {
   createRoom,
   getChatMessages,

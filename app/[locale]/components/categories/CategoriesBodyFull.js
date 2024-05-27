@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import CategoryCardSkeleton from "../skeletons/CategoryCardSkeleton";
 import Link from "next/link";
 

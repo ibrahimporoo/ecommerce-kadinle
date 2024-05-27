@@ -10,7 +10,7 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/swiper.min.css";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import HeartIcon from "../Icons/HeartIcon";
 import { unlikeProduct, likeProduct } from "./../../../api/supabase/user";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";

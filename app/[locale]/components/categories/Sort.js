@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const apply = "https://kadinle.com/media/images/apply.svg";
 
 const Sort = ({ setOpenSort, selectedSort, setSelectedSort }) => {

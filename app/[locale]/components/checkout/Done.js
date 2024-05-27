@@ -2,7 +2,7 @@
 import { getFormatPrice } from "@/app/api/lib/functions";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTranslations } from "next-intl";
 import CloseIcon from "../Icons/CloseIcon";
 import { ShopNowBtn } from "../global/ShopNowBtn";

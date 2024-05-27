@@ -4,7 +4,7 @@ import {
   footerLinksServiceCenter,
 } from "@/app/api/static/links";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React from "react";
 import { NewsLatter } from "../home/NewsLatter";

@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import Layout from "../components/layout/Layout";
 import ScrollUpComponent from "../components/global/ScrollUpComponent";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { supabase } from "@/app/api/supabase/supabase.config";
 import Cookies from "js-cookie";
 import { cookies } from "next/headers";

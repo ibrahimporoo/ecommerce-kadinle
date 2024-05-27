@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
 import { generateMail } from "@/app/api/emails/sender";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { subscribe } from "@/app/api/supabase/user";
 import {
   checkIfEmailHasSubscribe,

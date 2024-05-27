@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { updateNotificationStatus } from "@/app/api/supabase/user";
 import BellSlashIcon from "../Icons/BellSlashIcon";
 import { MobileNav } from "../header/MobileNav";

@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { StaticPageTitle } from "../../components/global/StaticPageTitle";
 import Layout from "../../components/layout/Layout";
 import ScrollUpComponent from "../../components/global/ScrollUpComponent";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export const metadata = { title: "KADINLE | Kadinle points" };
 

@@ -15,7 +15,7 @@ import { SpeakerIcon } from "../Icons/SpeakerIcon";
 import { PauseIcon } from "../Icons/PauseIcon";
 import { PlayIcon } from "../Icons/PlayIcon";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { StarIcon } from "../Icons/StarIcon";
 import { ThumbsUpIcon } from "../Icons/ThumbsUpIcon";
 import { EyeIcon } from "../Icons/EyeIcon";
