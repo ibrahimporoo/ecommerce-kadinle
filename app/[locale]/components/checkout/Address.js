@@ -1,7 +1,7 @@
 "use client";
 import { getUserAddresses } from "@/app/api/supabase/user";
 import { useTranslations } from "next-intl";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { CheckoutBar } from "./CheckoutBar";
 import AddNewAddress from "../my-profile/AddNewAddress";
 import { ShippingType } from "./ShippingType";
@@ -23,16 +23,16 @@ const Address = ({
   const [addresses, setAddresses] = useState([]);
   const [openFormAddress, setOpenFormAddress] = useState(false);
 
-  const getAddresses = () => {
+  const getAddresses = useCallback(() => {
     getUserAddresses().then((res) => {
       setAddresses(res);
       setShipping_adress(res?.[0]);
     });
-  };
+  }, [setShipping_adress])
 
   useEffect(() => {
     getAddresses();
-  }, []);
+  }, [getAddresses]);
 
   const onClickCancel = () => {
     setOpenFormAddress(false);

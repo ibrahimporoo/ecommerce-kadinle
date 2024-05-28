@@ -82,7 +82,7 @@ const ProductSlider = ({
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   return (
     <div className=" overflow-hidden relative ">

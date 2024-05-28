@@ -79,7 +79,7 @@ const FamilyPage = () => {
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   const swiperRef = useRef(null);
   return (

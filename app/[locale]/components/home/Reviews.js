@@ -37,7 +37,7 @@ export const Reviews = ({ reviews, sectionSettings }) => {
     }, 3000);
     setIntervalFunc(interval);
     return () => clearInterval(interval);
-  }, [target, reviews?.length]);
+  }, [target, reviews?.length, forward, reviewNumber]);
 
   useEffect(() => {
     const percent =

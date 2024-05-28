@@ -22,7 +22,7 @@ export const OurNew = ({ products, sectionSettings }) => {
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   return (
     <div

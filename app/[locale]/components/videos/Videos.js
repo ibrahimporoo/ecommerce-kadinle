@@ -36,7 +36,7 @@ export const Videos = ({ videos, layout }) => {
 
   useEffect(() => {
     setSelectedVideos(videos);
-  }, []);
+  }, [videos]);
 
   useEffect(() => {
     const endOffset = itemOffset + itemParPage;

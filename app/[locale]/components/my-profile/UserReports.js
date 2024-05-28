@@ -3,7 +3,7 @@
 import { getBillReports, getOrderReports } from "@/app/api/supabase/orders";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { Loading } from "../global/Loading";
 import { BillReports } from "./BillReports";
 import { OrderReports } from "./OrderReports";
@@ -16,20 +16,21 @@ export const UserReports = () => {
   const [orderReports, setOrderReports] = useState([]);
   const [billReports, setBillsReports] = useState([]);
 
-  const getBills = async () => {
+  const getBills = useCallback(async () => {
     setIsLoading(true);
     const response = await getBillReports(user?.id);
     setBillsReports(response?.data);
     setIsLoading(false);
-  };
-  const getOrders = async () => {
+  }, [user?.id])
+
+  const getOrders = useCallback(async () => {
     const response = await getOrderReports(user?.id);
     setOrderReports(response?.data);
-  };
+  }, [user?.id])
   useEffect(() => {
     getBills();
     getOrders();
-  }, []);
+  }, [getBills, getOrders]);
 
   return (
     <div className="flex flex-col">

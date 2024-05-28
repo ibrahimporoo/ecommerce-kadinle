@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, Fragment, useEffect, useMemo, useState } from "react";
+import React, { useRef, Fragment, useEffect, useMemo, useState, useCallback } from "react";
 import ProductCard from "../products/ProductCard";
 import Image from "next/legacy/image";
 import { ViewAs } from "./ViewAs";
@@ -51,11 +51,15 @@ const SingleCategory = ({ layout, remainingTime, category, searchKey }) => {
   const [CACHE_SUBCATEGORIES, setCACHE_SUBCATEGORIES] = useState([]);
   const [isPlusSize, setIsPlusSize] = useState(false);
 
-  const priceFormat = (price) => {
-    return price * currency?.currency?.rate;
-  };
+  // const priceFormat = (price) => {
+  //   return price * currency?.currency?.rate;
+  // };
 
-  const getMinAndMaxPrice = (products) => {
+  const priceFormat = useCallback(() => {
+    return (price) => price * currency?.currency?.rate;
+  }, [currency?.currency?.rate])
+
+  const getMinAndMaxPrice = useCallback((products) => {
     if (products?.length) {
       let min = priceFormat(products?.[0]?.price);
       let max = priceFormat(products?.[0]?.price);
@@ -77,9 +81,9 @@ const SingleCategory = ({ layout, remainingTime, category, searchKey }) => {
         };
       });
     }
-  };
+  }, [priceFormat])
 
-  const fetchDate = async () => {
+  const fetchDate = useCallback(async () => {
     setLoading(true);
     setCategoryInfo(category?.[searchKey]);
     setProducts(category?.products);
@@ -88,7 +92,7 @@ const SingleCategory = ({ layout, remainingTime, category, searchKey }) => {
     setCACHE_SIZES(category?.sizes);
     setCACHE_SUBCATEGORIES(category?.subcategories);
     setLoading(false);
-  };
+  }, [category, getMinAndMaxPrice, searchKey])
 
   const fetchSeasons = async () => {
     const response = await getBrands();
@@ -104,7 +108,7 @@ const SingleCategory = ({ layout, remainingTime, category, searchKey }) => {
     fetchDate();
     fetchSeasons();
     fetchBrands();
-  }, []);
+  }, [fetchDate, priceFormat, ]);
 
   useEffect(() => {
     if (!category?.products?.length) return;
@@ -175,12 +179,12 @@ const SingleCategory = ({ layout, remainingTime, category, searchKey }) => {
     selectedCategories,
     selectedColors,
     selectedSizes,
-    priceValues?.[0],
-    priceValues?.[1],
     category?.products,
     isPlusSize,
     selectedBrand,
     selectedSeason,
+    priceFormat,
+    priceValues
   ]);
 
   useEffect(() => {

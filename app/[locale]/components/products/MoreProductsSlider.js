@@ -22,7 +22,7 @@ export const MoreProductsSlider = ({ title, category, products }) => {
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   if (!products?.length) return;
 

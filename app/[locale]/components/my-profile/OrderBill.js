@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
 import { useTranslations } from "next-intl";
@@ -15,16 +15,16 @@ export const OrderBill = ({ order_id, open, onClose }) => {
   const [openFormBill, setOpenFormBill] = useState(false);
   const [orderBillInformation, setOrderBillInformation] = useState({});
 
-  const getBill = async () => {
+  const getBill = useCallback(async () => {
     setLoading(true);
     const response = await getOrderBill(order_id);
     setLoading(false);
     setOrderBillInformation(response?.data?.at(0));
-  };
+  }, [order_id])
 
   useEffect(() => {
     getBill();
-  }, [order_id]);
+  }, [order_id, getBill]);
 
   return (
     <>

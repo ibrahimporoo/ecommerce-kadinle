@@ -17,7 +17,7 @@ export const ReviewCard = ({ review }) => {
       ? last_name?.[0] + last_name.substring(1).replace(/[a-zA-Z]/g, "*")
       : "";
     return name;
-  }, [first_name, last_name]);
+  }, [first_name, last_name, review?.user.hash_name]);
 
   return (
     <div className="flex justify-center w-full min-w-full  transition-all duration-[1000ms] ">

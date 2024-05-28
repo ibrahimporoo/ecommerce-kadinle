@@ -82,7 +82,7 @@ const CartPage = ({ locale }) => {
       if (calcTotal >= FREE_SHIPPING_COST) setShipping_type(SHIPPING_TYPE?.[1]);
       if (!CACHE_CART_STOCKS) getStocks(res?.data?.map((item) => item?.id));
     });
-  }, [refresh]);
+  }, [refresh, CACHE_CART_STOCKS]);
 
   const getStocks = async (variantIds) => {
     const stocks = await getStocksByVariantIds(variantIds);
@@ -163,7 +163,8 @@ const CartPage = ({ locale }) => {
     } else {
       setShipping_cost(shippingsCosts?.normal);
     }
-  }, [shipping_type]);
+  }, [shipping_type, shippingsCosts?.fast, shippingsCosts?.normal]);
+
 
   const removeItemFromCart = (variantId) => {
     setSelectedItemId(variantId);

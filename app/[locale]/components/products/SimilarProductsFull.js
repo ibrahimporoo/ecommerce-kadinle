@@ -2,7 +2,7 @@
 
 import { getSimilarProducts } from "@/app/api/supabase/products";
 import { useTranslations } from "next-intl";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
@@ -24,15 +24,15 @@ const SimilarProductsFull = ({ sku, locale }) => {
   useEffect(() => {
     setProducts([]);
     loadMoreData();
-  }, [sku]);
+  }, [sku, loadMoreData]);
 
   useEffect(() => {
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
-  const loadMoreData = async (moreCount = 0) => {
+  const loadMoreData = useCallback(async (moreCount = 0) => {
     if (preventLoadMore) return;
 
     setEnd((prev) => prev + moreCount);
@@ -46,7 +46,7 @@ const SimilarProductsFull = ({ sku, locale }) => {
         setPreventLoadMore(true);
       }
     });
-  };
+  }, [end, preventLoadMore, sku, start])
 
   const sliderNextHandler = () => {
     locale === "ar"

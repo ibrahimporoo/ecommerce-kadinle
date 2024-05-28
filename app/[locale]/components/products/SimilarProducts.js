@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Fragment } from "react";
 
 import ProductCard from "./ProductCard";
@@ -27,14 +27,14 @@ const SimilarProducts = ({ sku }) => {
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   useEffect(() => {
     setProducts([]);
     loadMoreData();
-  }, [sku]);
+  }, [sku, loadMoreData]);
 
-  const loadMoreData = async (moreCount = 0) => {
+  const loadMoreData = useCallback(async (moreCount = 0) => {
     if (preventLoadMore) return;
     setEnd((prev) => prev + moreCount);
     setStart((prev) => prev + moreCount);
@@ -48,7 +48,7 @@ const SimilarProducts = ({ sku }) => {
       }
     });
     setLoading(false);
-  };
+  }, [end, preventLoadMore, sku, start])
 
   return (
     <Fragment>

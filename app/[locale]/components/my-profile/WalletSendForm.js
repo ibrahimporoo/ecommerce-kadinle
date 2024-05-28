@@ -40,7 +40,7 @@ export const WalletSendForm = ({ setOpenForm, setRefreshWallet }) => {
         response?.find((c) => c?.id === currency?.currency?.id)
       );
     });
-  }, []);
+  }, [currency?.currency?.id]);
 
   const onBlurEmail = async () => {
     setLoadingEmail(true);

@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 
@@ -42,11 +42,11 @@ export const ReturnOrderForm = ({ setOpenFormReturn }) => {
     });
   };
 
-  const getReturnReasons = async () => {
+  const getReturnReasons = useCallback(async () => {
     getReasons().then((res) => {
       setReasons(res?.data?.filter((r) => r?.language_id === language?.id));
     });
-  };
+  }, [language?.id])
 
   useEffect(() => {
     if (!orderId || !variantId) return;
@@ -63,7 +63,7 @@ export const ReturnOrderForm = ({ setOpenFormReturn }) => {
   useEffect(() => {
     getReturnReasons();
     getOrders();
-  }, []);
+  }, [getReturnReasons]);
 
   const onChangeFiles = (e) => {
     const media = Array.from(e.target.files);

@@ -58,12 +58,7 @@ const ProductDescription = ({
     }
 
     setAvailableColors(Object.values(colorsContent));
-  }, [
-    product?.productinfo?.category_id,
-    language?.id,
-    product?.productvariants,
-    variants,
-  ]);
+  }, [product?.productinfo?.category_id, language?.id, product?.productvariants, variants, setCategoryInfo]);
 
   return (
     <div className="flex flex-col text-[#707070] space-y-4 text-[14px]  border-b pb-6 border-[#AEAEAE] ">

@@ -39,7 +39,7 @@ export const VideoSection = ({
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   useEffect(() => {
     setLoadingClient(false);

@@ -22,7 +22,7 @@ const Shorts = ({ layout, videos, videoId }) => {
         setCurrentIndex(index);
       }
     }
-  }, [videos]);
+  }, [videos, videoId]);
 
   const handleTouchStart = (event) => {
     setTouchStartY(event.touches[0].clientY);

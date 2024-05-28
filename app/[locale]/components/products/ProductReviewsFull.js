@@ -1,7 +1,7 @@
 "use client";
 import { addComment, didUserBuy } from "@/app/api/supabase/products";
 import { useTranslations } from "next-intl";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import OneReview from "./OneReview";
 import Link from "next/link";
@@ -18,16 +18,16 @@ const ProductReviewsFull = ({ variants, product_id, reviews, setRefresh }) => {
   const [allowComment, setAllowComment] = useState(false);
   const [maxCommentsView, setMaxCommentsView] = useState(5);
 
-  const isAllowToComment = async () => {
+  const isAllowToComment = useCallback(async () => {
     const response = await didUserBuy(variants?.map((variant) => variant?.id));
     setAllowComment(response);
-  };
+  }, [variants])
 
   useEffect(() => {
     if (!variants) return;
 
     isAllowToComment();
-  }, [variants]);
+  }, [isAllowToComment, variants]);
 
   const uploadFiles = (e) => {
     let mediaBlob = [];

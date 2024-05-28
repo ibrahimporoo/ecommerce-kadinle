@@ -2,7 +2,7 @@
 
 import { getUserChart } from "@/app/api/supabase/user";
 import { useTranslations } from "next-intl";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 export const SizeInfoBtn = ({
   setOpenSizeInfo,
@@ -13,7 +13,7 @@ export const SizeInfoBtn = ({
   const t = useTranslations();
   const [yourSize, setYourSize] = useState(null);
 
-  const fetchChart = async () => {
+  const fetchChart = useCallback(async () => {
     const userSize = await getUserChart();
     let hashUserChart = {};
 
@@ -48,11 +48,11 @@ export const SizeInfoBtn = ({
         }
       }
     }
-  };
+  }, [productChart, sizes])
 
   useEffect(() => {
     fetchChart();
-  }, []);
+  }, [fetchChart]);
 
   return (
     <button

@@ -63,7 +63,7 @@ export const LiveChatFull = () => {
     return () => {
       _supabase.removeChannel(channel);
     };
-  }, [roomId]);
+  }, [roomId, openChat]);
 
   // scroll to the bottom of the chat-messages container on messages update
   useEffect(() => {

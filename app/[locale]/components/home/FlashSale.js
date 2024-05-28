@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const FlashSale = ({ languageId, offer }) => {
   const content = offer?.offer_content?.find(
@@ -8,7 +8,7 @@ const FlashSale = ({ languageId, offer }) => {
   );
 
   return (
-    <div className="mx-2 my-3 container mx-auto">
+    <div className="my-3 container mx-auto">
 
       <div className="flash-full">
         <Link

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 
 import { useTranslations } from "next-intl";
 import { useGlobalOptions } from "@/app/context/GlobalOptionsContext";
@@ -21,14 +21,14 @@ const HistoryProducts = ({ sectionSettings }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadMoreData();
-  }, [historyCategoryIds]);
+  }, [historyCategoryIds, loadMoreData]);
 
   // useEffect(() => {
   //   if (products?.length + 1 < end) setPreventLoadMore(true)
   //   else setPreventLoadMore(false)
   // }, [products, end])
 
-  const loadMoreData = async (moreCount = 0) => {
+  const loadMoreData = useCallback(async (moreCount = 0) => {
     if (preventLoadMore) return;
     setStart((prev) => prev + moreCount);
     setEnd((prev) => prev + moreCount);
@@ -53,7 +53,7 @@ const HistoryProducts = ({ sectionSettings }) => {
         }
       }
     });
-  };
+  }, [end, historyCategoryIds, preventLoadMore, start])
 
   if (!loading && !products?.length) return; // ignore component
 

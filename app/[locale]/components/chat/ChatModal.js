@@ -31,7 +31,7 @@ const ChatModal = ({ setOpenChat }) => {
 
   useEffect(() => {
     setScreen(chat?.[selectedScreen]);
-  }, [selectedScreen, chat]);
+  }, [selectedScreen]);
 
   const onMoveScreen = (screenName) => {
     Stack.push(selectedScreen);

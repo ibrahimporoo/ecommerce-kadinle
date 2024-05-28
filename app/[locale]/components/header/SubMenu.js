@@ -37,7 +37,7 @@ export const SubMenu = ({ categories, language }) => {
       typeof window === "object" &&
         window.removeEventListener("scroll", handleScroll);
     };
-  }, [originalTop, sticky, myRef?.current]);
+  }, [originalTop, sticky]);
 
   return (
     <nav className="flex flex-col relative menu bg-primary">

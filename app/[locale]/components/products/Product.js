@@ -89,7 +89,7 @@ const Product = ({
   const [stockCount, setStockCount] = useState(0);
 
   
-  const getHashCart = async () => {
+  const getHashCart = useCallback(async () => {
     const res = await getUserCart();
     if (res?.error || !res?.data?.length) return;
     let hash = {};
@@ -98,16 +98,16 @@ const Product = ({
     }
     setCACHE_CART(hash);
     if (selectedVariant) checkStock(selectedVariant);
-  };
+  }, [checkStock, selectedVariant])
 
   useEffect(() => {
     getHashCart();
-  }, [refresh]);
+  }, [getHashCart, refresh]);
 
   useEffect(() => {
     if (selectedVariant && Object.keys(CACHE_CART)?.length)
       checkStock(selectedVariant);
-  }, [CACHE_CART, selectedVariant]);
+  }, [CACHE_CART, checkStock, selectedVariant]);
 
   const getSelectedVariant = useCallback(
     (color, size, patternSku) => {
@@ -141,7 +141,7 @@ const Product = ({
       setMaxCount(selectedVariant?.stocks?.[0]?.stock > 1 ? false : true);
       checkStock(selectedVariant);
     },
-    [product?.productvariants]
+    [checkStock, product?.productvariants]
   );
 
   useEffect(() => {
@@ -184,7 +184,7 @@ const Product = ({
     if (swiper !== null && filterImages) {
       swiper.slideTo(target2);
     }
-  }, [target2]);
+  }, [filterImages, swiper, target2]);
 
   useEffect(() => {
     if (selectedVariant) {
@@ -247,11 +247,7 @@ const Product = ({
           img?.image?.endsWith(".mp4")
       )
     );
-  }, [
-    product?.productinfo?.id,
-    product?.productimages,
-    product?.productvariants,
-  ]);
+  }, [product.productinfo.id, product?.productimages, product?.productvariants, setColor]);
 
   useEffect(() => {
     if (favoritesList?.[product?.productinfo?.id]) {
@@ -283,7 +279,7 @@ const Product = ({
         }
       }
     }
-  }, [selectedRegion?.id, availableSizes]);
+  }, [selectedRegion?.id, availableSizes, size?.id]);
   const filterColors = (color) => {
     setColor(color);
     let hashSize = {};
@@ -338,7 +334,7 @@ const Product = ({
       });
     }
   };
-  const checkStock = (variant) => {
+  const checkStock = useCallback((variant) => {
     let stockCount = variant?.stocks?.reduce(
       (result, cur) => (result += cur?.stock),
       0
@@ -356,7 +352,7 @@ const Product = ({
         setLatestCount(stockCount);
       }
     }
-  };
+  }, [CACHE_CART])
 
   const decreaseQuantity = () => {
     if (quantity > 1) {

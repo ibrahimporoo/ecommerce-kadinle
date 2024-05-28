@@ -22,7 +22,7 @@ export const MoreProductsSliderFull = ({ title, category, products }) => {
     if (swiper !== null) {
       swiper.slideTo(target);
     }
-  }, [target]);
+  }, [target, swiper]);
 
   const sliderNextHandler = () => {
     language?.code?.toLowerCase() === "ar"

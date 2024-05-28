@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 import { useTranslations } from "next-intl";
@@ -21,15 +21,16 @@ const AddComment = ({ variants, setRefresh, productId }) => {
   const [rating, setRating] = useState(5);
   const [allowComment, setAllowComment] = useState(false);
 
-  const isAllowToComment = async () => {
+  const isAllowToComment = useCallback(async () => {
     const response = await didUserBuy(variants?.map((variant) => variant?.id));
     setAllowComment(response);
-  };
+  }, [variants])
+
   useEffect(() => {
     if (!variants) return;
 
     isAllowToComment();
-  }, [variants]);
+  }, [isAllowToComment, variants]);
 
   const uploadFiles = (e) => {
     let media = [];

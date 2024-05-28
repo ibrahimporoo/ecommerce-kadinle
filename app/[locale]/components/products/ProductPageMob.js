@@ -101,9 +101,9 @@ const ProductPageMob = ({
 
   useEffect(() => {
     if (!product?.productinfo?.id) router.push("/404");
-  }, [product]);
+  }, [product, router]);
 
-  const getHashCart = async () => {
+  const getHashCart = useCallback(async () => {
     const res = await getUserCart();
     if (res?.error) return;
     let hash = {};
@@ -112,16 +112,16 @@ const ProductPageMob = ({
     }
     setCACHE_CART(hash);
     if (selectedVariant) checkStock(selectedVariant);
-  };
+  }, [checkStock, selectedVariant])
 
   useEffect(() => {
     getHashCart();
-  }, [refresh]);
+  }, [getHashCart, refresh]);
 
   useEffect(() => {
     if (selectedVariant && Object.keys(CACHE_CART)?.length)
       checkStock(selectedVariant);
-  }, [CACHE_CART, selectedVariant]);
+  }, [CACHE_CART, checkStock, selectedVariant]);
 
   const getSelectedVariant = useCallback(
     (color, size, patternSku) => {
@@ -155,7 +155,7 @@ const ProductPageMob = ({
       setMaxCount(selectedVariant?.stocks?.[0]?.stock > 1 ? false : true);
       checkStock(selectedVariant);
     },
-    [product?.productvariants]
+    [checkStock, product?.productvariants]
   );
 
   useEffect(() => {
@@ -224,12 +224,7 @@ const ProductPageMob = ({
         (category) => category?.language_id === language?.id
       );
     setCategoryInfo(selectedCategoryByLanguage);
-  }, [
-    product?.productinfo?.id,
-    language?.id,
-    product?.productinfo?.category_content,
-    product?.productinfo?.category_id,
-  ]);
+  }, [product?.productinfo.id, language?.id, product?.productinfo?.category_content, product?.productinfo?.category_id, setHistoryCategoryIds]);
 
   useEffect(() => {
     if (!product?.productimages?.length) return;
@@ -317,7 +312,7 @@ const ProductPageMob = ({
         }
       }
     }
-  }, [selectedRegion?.id, availableSizes]);
+  }, [selectedRegion?.id, availableSizes, size?.id]);
 
   useEffect(() => {
     setSelectedRegion(
@@ -364,7 +359,7 @@ const ProductPageMob = ({
     }
   };
 
-  const checkStock = (variant) => {
+  const checkStock = useCallback((variant) => {
     let stockCount = variant?.stocks?.reduce(
       (result, cur) => (result += cur?.stock),
       0
@@ -382,7 +377,7 @@ const ProductPageMob = ({
         setLatestCount(stockCount);
       }
     }
-  };
+  }, [CACHE_CART])
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
@@ -468,7 +463,7 @@ const ProductPageMob = ({
         )
       );
     }
-  }, [VARIANT_IMAGES, product]);
+  }, [color?.color_id, product]);
 
   const fetchChartNumber = useCallback(async () => {
     try {
@@ -685,7 +680,7 @@ const ProductPageMob = ({
                       </del>
                     ) : null}
                   </div>
-                  <div className="flex gap-[2px] justify-center gap-[2px] items-center">
+                  <div className="flex justify-center gap-[2px] items-center">
                     <ProductStarReviews reviews={product?.productcomments} />
                   </div>
                 </div>

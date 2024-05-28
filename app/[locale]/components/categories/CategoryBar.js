@@ -34,7 +34,7 @@ const CategoryBar = ({ categories, categoryId }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [originalTop, sticky, myRef.current]);
+  }, [originalTop, sticky]);
 
   const subCategories = useMemo(() => {
     const sub = categories?.filter(

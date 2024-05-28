@@ -15,7 +15,7 @@ export const LanguageBar = ({ languages, locale }) => {
   useEffect(() => {
     const lang = languages?.find((lang) => lang?.id === LANGUAGES?.[locale]);
     changeLanguage(lang);
-  }, []);
+  }, [changeLanguage, languages, locale]);
 
   const handleChangeLanguage = (lang) => {
     typeof window === "object" &&

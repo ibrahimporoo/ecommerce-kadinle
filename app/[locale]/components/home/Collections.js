@@ -36,7 +36,7 @@ const Collections = ({ collections: collectionsData, locale, languageId }) => {
 
     window.addEventListener('resize', updateDataBasedOnWidth);
 
-  }, []);
+  }, [collectionsData]);
 
   const sliderNextHandler = () => {
     locale === "ar"
